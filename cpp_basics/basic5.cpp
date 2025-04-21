@@ -18,14 +18,17 @@ int main() {
     std::cin >> tempo_sunny;
     sunny = tempo_sunny == "y" ? true : false;
 
-    std::cout << "It is " << temp << " degrees";
-    if (sunny) 
-    {
-        std::cout << " and sunny";
+    if (sunny && temp >= 25) {
+        std::cout << "It's sunny and hot, let's turn on the ac.";
     }
-    else
-    {
-        std::cout << " and not sunny";
+    else if (sunny && temp >= 20) {
+        std::cout << "So comfortable, let's go for a walk.";
+    }
+    else if (!sunny || 5 <= temp <= 20){
+        std::cout << "Honestly my favourite climate";
+    }
+    else {
+        std::cout << "Not ideal";
     }
     std::cout << std::endl;
     return 0;
